@@ -3,6 +3,12 @@ var Hamming = require('./hamming');
 describe('Hamming', function () {
   var hamming = new Hamming();
 
+  it('throws exceptions when given junk input' , function () {
+    expect(function() {
+      hamming.compute(10, 22);
+    }).toThrow();
+  });
+
   it('no difference between identical strands', function () {
     expect(hamming.compute('A', 'A')).toEqual(0);
   });
